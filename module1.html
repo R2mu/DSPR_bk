@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>GWS Data Science and Problem Recognition - 2&nbsp; Module 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./module2.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./module1.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 1</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">GWS Data Science and Problem Recognition</a> 
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./module1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 1</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./module2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 2</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#installing-and-loading-r-packages" id="toc-installing-and-loading-r-packages" class="nav-link active" data-scroll-target="#installing-and-loading-r-packages"><span class="header-section-number">2.1</span> Installing and loading R packages</a></li>
+  <li><a href="#loading-data-locally" id="toc-loading-data-locally" class="nav-link" data-scroll-target="#loading-data-locally"><span class="header-section-number">2.2</span> Loading data locally</a>
+  <ul class="collapse">
+  <li><a href="#loading-data-from-api" id="toc-loading-data-from-api" class="nav-link" data-scroll-target="#loading-data-from-api"><span class="header-section-number">2.2.1</span> Loading data from API</a></li>
+  <li><a href="#binding-multiple-csvs-from-a-folder" id="toc-binding-multiple-csvs-from-a-folder" class="nav-link" data-scroll-target="#binding-multiple-csvs-from-a-folder"><span class="header-section-number">2.2.2</span> Binding multiple CSVs from a folder</a></li>
+  </ul></li>
+  <li><a href="#simple-data-cleaning-procedures" id="toc-simple-data-cleaning-procedures" class="nav-link" data-scroll-target="#simple-data-cleaning-procedures"><span class="header-section-number">2.3</span> Simple data cleaning procedures</a>
+  <ul class="collapse">
+  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins"><span class="header-section-number">2.3.1</span> Joins</a></li>
+  <li><a href="#selecting-and-filtering" id="toc-selecting-and-filtering" class="nav-link" data-scroll-target="#selecting-and-filtering"><span class="header-section-number">2.3.2</span> Selecting and filtering</a></li>
+  <li><a href="#adding-calculated-columns" id="toc-adding-calculated-columns" class="nav-link" data-scroll-target="#adding-calculated-columns"><span class="header-section-number">2.3.3</span> Adding calculated columns</a></li>
+  <li><a href="#adding-calculated-columns-by-group" id="toc-adding-calculated-columns-by-group" class="nav-link" data-scroll-target="#adding-calculated-columns-by-group"><span class="header-section-number">2.3.4</span> Adding calculated columns by group</a></li>
+  <li><a href="#summarizing-data-creating-pivot-tables" id="toc-summarizing-data-creating-pivot-tables" class="nav-link" data-scroll-target="#summarizing-data-creating-pivot-tables"><span class="header-section-number">2.3.5</span> Summarizing data (creating pivot tables)</a></li>
+  </ul></li>
+  <li><a href="#running-your-first-model" id="toc-running-your-first-model" class="nav-link" data-scroll-target="#running-your-first-model"><span class="header-section-number">2.4</span> Running your first model</a></li>
+  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises"><span class="header-section-number">2.5</span> Practice exercises</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">2.6</span> Additional resources</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 1</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="installing-and-loading-r-packages" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="installing-and-loading-r-packages"><span class="header-section-number">2.1</span> Installing and loading R packages</h2>
+<p>If you have never installed an R package there is a couple of options which I have outlined below :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># "#" Will comment out R code and will just print text</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># as I already have pacman loaded I will comment it out.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># the short cut to remove comments from code is ctrl+shift+c</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("pacman")</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse,data.table,httr,jsonlite,htmlTable,sf,tidytext)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="loading-data-locally" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="loading-data-locally"><span class="header-section-number">2.2</span> Loading data locally</h2>
+<p>There a couple of different ways to load data. As I want to attempt to future proof your learning we will use the fread() function from the data.table package. Many options for reading in csv;s exist but this by far is one of the fastest ways to load data in R.</p>
+<p><strong>Option 1</strong>: if the data is located in your directory it is a sample as.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># option 1: if the data is located in your directory it is a sample as.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>data1   <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">"PlayerLong.csv"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>playpos <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">"PlayPos3.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Option 2</strong>: Data is located elsewhere on your computer you will need to put the full path of where it is located. A simple way to get started with your path is with the <code>getwd()</code> function</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "C:/Users/Research/Desktop/GWS_DSPR"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#data1 &lt;- fread("/Users/Research/Dropbox/Rscripts/PlayerLong.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Option 3:</strong> Finally if you are feeling lazy or struggling to put the correct path in you <code>file.choose()</code>;</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#data1 &lt;- fread(file.choose())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="loading-data-from-api" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="loading-data-from-api"><span class="header-section-number">2.2.1</span> Loading data from API</h3>
+<p>With the way technologies are heading, connecting to API’s to extract data are only going to become more common. Hence, I will give a quick example of how you may do that in R. Unfortunately, due differing data privacy and safety protocols, some API’s will require different methods of securing a “handshake”. Below is a simple example that does not require authentication.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## get current location of ISS</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://api.wheretheiss.at/v1/satellites/25544"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>world_coordinates <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"world"</span>) </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  df  <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url,<span class="at">simplifyDataFrame =</span> T)<span class="sc">|&gt;</span><span class="fu">data.frame</span>()</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#dff &lt;- rbind(dff,df)</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">ggplot</span>(df,<span class="fu">aes</span>(longitude,latitude))<span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>          <span class="fu">geom_map</span>( </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> world_coordinates, <span class="at">map =</span> world_coordinates, </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(long,lat, <span class="at">map_id =</span> region) </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>          )<span class="sc">+</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>          <span class="fu">geom_point</span>(<span class="at">col=</span><span class="st">"orange"</span>,<span class="at">size=</span><span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>          <span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in geom_map(data = world_coordinates, map = world_coordinates,
+aes(long, : Ignoring unknown aesthetics: x and y</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="module1_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="binding-multiple-csvs-from-a-folder" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="binding-multiple-csvs-from-a-folder"><span class="header-section-number">2.2.2</span> Binding multiple CSVs from a folder</h3>
+<p>Sometimes you will have a list of multiple CSV’s that are the same in structure that just represent different dates of saving. In R it is relatively simple to loop through a directory and append all the files. There are multiple ways of doing this but here is one of the most concise ways I have come across.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## directory</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>loc <span class="ot">&lt;-</span> <span class="st">"/Users/Research/Dropbox/Rscripts/listExample"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># gets a list of files in directoru</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> loc, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.csv$"</span>,<span class="at">full.names =</span> T)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="do">## loops through and binds them together. </span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>combined_df <span class="ot">&lt;-</span> <span class="fu">rbindlist</span>(<span class="fu">lapply</span>(files, fread))</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(combined_df<span class="sc">$</span>FIXED_ID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 106730101 106730102 106730103</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combined_df[,.(MATCH_DATE,GROUP_ROUND_NO,HOME_SQUAD,AWAY_SQUAD,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                    PERIOD,STATISTIC_CODE,FULLNAME)])<span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  htmlTable<span class="sc">::</span><span class="fu">htmlTable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="gmisc_table table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; border-bottom: 1px solid grey; border-top: 2px solid grey;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">MATCH_DATE</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">GROUP_ROUND_NO</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">HOME_SQUAD</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">AWAY_SQUAD</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">PERIOD</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">STATISTIC_CODE</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">FULLNAME</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">28-FEB-19</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">Essendon</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MTCHI</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: center;">28-FEB-19</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">Essendon</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">PERST</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">28-FEB-19</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">Essendon</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">CEBO</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: center;">28-FEB-19</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">Essendon</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">CEBO</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: center;">28-FEB-19</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">Essendon</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">CBVS</td>
+<td style="text-align: center;">Andrew Phillips</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 2px solid grey;">6</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">28-FEB-19</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">1</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Carlton</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Essendon</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">1</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">CBVS</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Zac Clarke</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="simple-data-cleaning-procedures" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="simple-data-cleaning-procedures"><span class="header-section-number">2.3</span> Simple data cleaning procedures</h2>
+<p>In this example we will be using <strong>data1</strong> and <strong>playpos</strong> data.frames. We will explore how to filter, add variables (mutate) , join data bases and summaries. Below I will tidyverse packages to do this but you could also do everything below using the data.table package (my personal favorite) .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lets have a look at column names from both </span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "V1"             "MATCH_ID"       "GAME_ID"        "SEASON_ID"     
+ [5] "GROUP_ROUND_NO" "VENUE_NAME"     "PERSON_ID"      "FULLNAME"      
+ [9] "SQUAD_NAME"     "OPP_SQUAD_NAME" "SQUAD_MARGIN"   "variable"      
+[13] "value"         </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(playpos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "FULLNAME"  "SEASON_ID" "PERSON_ID" "Position" </code></pre>
+</div>
+</div>
+<p>Quick way to get additional information about your data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Classes 'data.table' and 'data.frame':  2656638 obs. of  13 variables:
+ $ V1            : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ MATCH_ID      : int  266569840 266569840 266569840 266569840 266569840 266569840 266569840 266569840 266569840 266569840 ...
+ $ GAME_ID       : chr  "R0123" "R0123" "R0123" "R0123" ...
+ $ SEASON_ID     : int  2023 2023 2023 2023 2023 2023 2023 2023 2023 2023 ...
+ $ GROUP_ROUND_NO: int  1 1 1 1 1 1 1 1 1 1 ...
+ $ VENUE_NAME    : chr  "MCG" "MCG" "MCG" "MCG" ...
+ $ PERSON_ID     : int  250395 270146 270896 280819 290627 290847 293813 294036 294592 294674 ...
+ $ FULLNAME      : chr  "Jack Riewoldt" "Ed Curnow" "Trent Cotchin" "Dylan Grimes" ...
+ $ SQUAD_NAME    : chr  "Richmond" "Carlton" "Richmond" "Richmond" ...
+ $ OPP_SQUAD_NAME: chr  "Carlton" "Richmond" "Carlton" "Carlton" ...
+ $ SQUAD_MARGIN  : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ variable      : chr  "BALL_UP_CLEARANCE" "BALL_UP_CLEARANCE" "BALL_UP_CLEARANCE" "BALL_UP_CLEARANCE" ...
+ $ value         : num  1 1 3 0 2 0 0 2 1 0 ...
+ - attr(*, ".internal.selfref")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<p>The above can be a useful problem solver if you are struggling with code, as sometimes things that you might expect to be saved as a integer may be saved as a character. If you then tried to average a column that is considered to be characters you would run into trouble.</p>
+<section id="joins" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="joins"><span class="header-section-number">2.3.1</span> Joins</h3>
+<p>We can notice that both data.frames have columns names called PERSON_ID, what we would like to do is join these databases by SEASON_ID &amp; PERSON_ID so that we could have player position joined with the <strong>data1</strong> database. To do this we are going to use a <code>left_join()</code> function from <code>dplyr</code> package, this package is loaded when you load <code>Tidyverse</code> .</p>
+<p>A quick note on joins. There are many different types of joins, Left, Right, Inner, Outer and Cross joins. I struggle to remember what they all represent namely because I have only ever really had to use Left joins and the occasional cross join. Below is an example of both a Left and Cross join. See <a href="https://r4ds.had.co.nz/relational-data.html#understanding-joins" class="uri">https://r4ds.had.co.nz/relational-data.html#understanding-joins</a> for more information regarding other join methods.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Cross join: I am going to use the data.table CJ function here just because it is already loaded and it is faster than tidyverse equivalent</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>list1 <span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">"2023-11-20"</span>), <span class="fu">as.Date</span>(<span class="st">"2024-09-28"</span>), <span class="at">by=</span><span class="st">"days"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>list2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"C"</span>,<span class="st">"D"</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">CJ</span>(list1,list2),<span class="dv">12</span>)<span class="sc">|&gt;</span>htmlTable<span class="sc">::</span><span class="fu">htmlTable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="gmisc_table table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; border-bottom: 1px solid grey; border-top: 2px solid grey;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">list1</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">list2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">2023-11-20</td>
+<td style="text-align: center;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: center;">2023-11-20</td>
+<td style="text-align: center;">B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">2023-11-20</td>
+<td style="text-align: center;">C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: center;">2023-11-20</td>
+<td style="text-align: center;">D</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: center;">2023-11-21</td>
+<td style="text-align: center;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: center;">2023-11-21</td>
+<td style="text-align: center;">B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: center;">2023-11-21</td>
+<td style="text-align: center;">C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: center;">2023-11-21</td>
+<td style="text-align: center;">D</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: center;">2023-11-22</td>
+<td style="text-align: center;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: center;">2023-11-22</td>
+<td style="text-align: center;">B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">11</td>
+<td style="text-align: center;">2023-11-22</td>
+<td style="text-align: center;">C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 2px solid grey;">12</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">2023-11-22</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">D</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">## now for a left join example</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="do">## simple rule for left join, large merges with small, in our case data1 with playpos</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">=</span> <span class="fu">left_join</span>(data1,playpos, <span class="at">by =</span><span class="fu">c</span>(<span class="st">"SEASON_ID"</span>,<span class="st">"PERSON_ID"</span>,<span class="st">"FULLNAME"</span>))</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">#names(data2)</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data2)<span class="sc">|&gt;</span>htmlTable<span class="sc">::</span><span class="fu">htmlTable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="gmisc_table table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; border-bottom: 1px solid grey; border-top: 2px solid grey;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">V1</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">MATCH_ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">GAME_ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">SEASON_ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">GROUP_ROUND_NO</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">VENUE_NAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">PERSON_ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">FULLNAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">SQUAD_NAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">OPP_SQUAD_NAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">SQUAD_MARGIN</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">value</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">Position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">R0123</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">250395</td>
+<td style="text-align: center;">Jack Riewoldt</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">BALL_UP_CLEARANCE</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Key Fwd</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">R0123</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">270146</td>
+<td style="text-align: center;">Ed Curnow</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">BALL_UP_CLEARANCE</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Mid Fwd</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">R0123</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">270896</td>
+<td style="text-align: center;">Trent Cotchin</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">BALL_UP_CLEARANCE</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Mid Fwd</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">R0123</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">280819</td>
+<td style="text-align: center;">Dylan Grimes</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">BALL_UP_CLEARANCE</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Key Def</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">R0123</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">290627</td>
+<td style="text-align: center;">Dion Prestia</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">BALL_UP_CLEARANCE</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Mid</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 2px solid grey;">6</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">6</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">266569840</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">R0123</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">2023</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">1</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">MCG</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">290847</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Dustin Martin</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Richmond</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Carlton</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">BALL_UP_CLEARANCE</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Gen Fwd</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="selecting-and-filtering" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="selecting-and-filtering"><span class="header-section-number">2.3.2</span> Selecting and filtering</h3>
+<p>Okay , lets say after inspection of the data.frame we feel like some columns are redundant or we simply just want to move some columns around we will achieve this using the <code>select</code> verb. Additionally, lets say we want to just have the data frame represent certain positions and key variables (game statistics) we think are important, this can be achieved using the <code>filter</code> verb.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Firstly lets get a list of column names </span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "V1"             "MATCH_ID"       "GAME_ID"        "SEASON_ID"     
+ [5] "GROUP_ROUND_NO" "VENUE_NAME"     "PERSON_ID"      "FULLNAME"      
+ [9] "SQUAD_NAME"     "OPP_SQUAD_NAME" "SQUAD_MARGIN"   "variable"      
+[13] "value"          "Position"      </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lets have a look at what positions exist within the Position column</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(data2<span class="sc">$</span>Position)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Key Fwd" "Mid Fwd" "Key Def" "Mid"     "Gen Fwd" "Wing"    "Gen Def"
+[8] "Ruck"    NA       </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># finally lets explore what statisitcs are within the variable column</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">unique</span>(data2<span class="sc">$</span>variable),<span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "BALL_UP_CLEARANCE"         "BALL_UP_FIRST_POSSESSION" 
+ [3] "BALL_UP_HITOUT"            "BALL_UP_HITOUT_SHARKED"   
+ [5] "BAULKED"                   "BEHIND"                   
+ [7] "BROKEN_TACKLE"             "BU_HITOUT_TO_ADVANTAGE"   
+ [9] "CB_FIRST_POSSESSION"       "CB_HITOUT_SHARKED"        
+[11] "CB_HITOUT_TO_ADVANTAGE"    "CENTRE_BOUNCE_CLEARANCE"  
+[13] "CENTRE_BOUNCE_HITOUT"      "CLANGER"                  
+[15] "CLANGER_HANDBALL"          "CLANGER_KICK"             
+[17] "CLEARANCE"                 "CONTESTED_KNOCK_ON"       
+[19] "CONTESTED_MARK"            "CONTESTED_MARK_FROM_OPP"  
+[21] "CONTESTED_MARK_FROM_TEAM"  "CONTESTED_POSSESSION"     
+[23] "CONTESTED_POSSESSION_POST" "CONTESTED_POSSESSION_PRE" 
+[25] "CRUMB"                     "DISPOSAL"                 
+[27] "DISPOSAL_POST"             "DISPOSAL_PRE"             
+[29] "EFFECTIVE_DISPOSAL"        "EFFECTIVE_HANDBALL"       </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">## select by number or name</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">=</span> data2<span class="sc">|&gt;</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="dv">14</span>,<span class="dv">10</span><span class="sc">:</span><span class="dv">13</span>)<span class="sc">|&gt;</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># If you want to remove a column you can do the below</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># select(!c("PERSON_ID"))|&gt; this is an example how you may remove a specific column</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   filter(Position %in% c("Mid Fwd","Mid"))|&gt;</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(variable <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"CLEARANCE"</span>,<span class="st">"CONTESTED_POSSESSION"</span>,</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"EFFECTIVE_DISPOSAL"</span>,<span class="st">"TURNOVER"</span>,</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"TOTAL_GAINED_METRES"</span>,<span class="st">"PLY_PRESS_PTS"</span>))</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Check variables</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(data2<span class="sc">$</span>variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "CLEARANCE"            "CONTESTED_POSSESSION" "EFFECTIVE_DISPOSAL"  
+[4] "TOTAL_GAINED_METRES"  "TURNOVER"             "PLY_PRESS_PTS"       </code></pre>
+</div>
+</div>
+</section>
+<section id="adding-calculated-columns" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="adding-calculated-columns"><span class="header-section-number">2.3.3</span> Adding calculated columns</h3>
+<p>Lets add a calculated column to the data frame using the <code>mutate</code> function. The column we are going to add is going to convert the score differential into a binary win loss where 0 represents a loss and 1 a win.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> data2<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="at">WL =</span> <span class="fu">ifelse</span>(SQUAD_MARGIN<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># if we wanted to have draw we could simply do </span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> data2<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="at">WLD =</span> <span class="fu">ifelse</span>(SQUAD_MARGIN<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">ifelse</span>(SQUAD_MARGIN<span class="sc">==</span><span class="dv">0</span>,<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>)))</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># We don't have to break it up as we did above we could simply add two columns at once</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> data2<span class="sc">|&gt;</span><span class="fu">mutate</span>(<span class="at">WL =</span> <span class="fu">ifelse</span>(SQUAD_MARGIN<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">WLD =</span> <span class="fu">ifelse</span>(SQUAD_MARGIN<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">ifelse</span>(SQUAD_MARGIN<span class="sc">==</span><span class="dv">0</span>,<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>)))</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>data2<span class="sc">|&gt;</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tail</span>(<span class="dv">10</span>)<span class="sc">|&gt;</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">htmlTable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="gmisc_table table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; border-bottom: 1px solid grey; border-top: 2px solid grey;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">SEASON_ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">MATCH_ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">GROUP_ROUND_NO</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">VENUE_NAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">PERSON_ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">FULLNAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">SQUAD_NAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">Position</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">OPP_SQUAD_NAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">SQUAD_MARGIN</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">value</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">WL</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">WLD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;">149741648</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">1013133</td>
+<td style="text-align: center;">Braeden Campbell</td>
+<td style="text-align: center;">Sydney Swans</td>
+<td style="text-align: center;">Wing</td>
+<td style="text-align: center;">Hawthorn</td>
+<td style="text-align: center;">76</td>
+<td style="text-align: center;">PLY_PRESS_PTS</td>
+<td style="text-align: center;">3.75</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;">149741648</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">1013230</td>
+<td style="text-align: center;">Logan McDonald</td>
+<td style="text-align: center;">Sydney Swans</td>
+<td style="text-align: center;">Key Fwd</td>
+<td style="text-align: center;">Hawthorn</td>
+<td style="text-align: center;">76</td>
+<td style="text-align: center;">PLY_PRESS_PTS</td>
+<td style="text-align: center;">22.8</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;">149741648</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">1013409</td>
+<td style="text-align: center;">James Jordon</td>
+<td style="text-align: center;">Sydney Swans</td>
+<td style="text-align: center;">Mid Fwd</td>
+<td style="text-align: center;">Hawthorn</td>
+<td style="text-align: center;">76</td>
+<td style="text-align: center;">PLY_PRESS_PTS</td>
+<td style="text-align: center;">29.1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;">149741648</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">1017091</td>
+<td style="text-align: center;">Jai Serong</td>
+<td style="text-align: center;">Hawthorn</td>
+<td style="text-align: center;">Key Def</td>
+<td style="text-align: center;">Sydney Swans</td>
+<td style="text-align: center;">-76</td>
+<td style="text-align: center;">PLY_PRESS_PTS</td>
+<td style="text-align: center;">1.2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;">149741648</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">1017094</td>
+<td style="text-align: center;">Connor Macdonald</td>
+<td style="text-align: center;">Hawthorn</td>
+<td style="text-align: center;">Gen Fwd</td>
+<td style="text-align: center;">Sydney Swans</td>
+<td style="text-align: center;">-76</td>
+<td style="text-align: center;">PLY_PRESS_PTS</td>
+<td style="text-align: center;">25.65</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;">149741648</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">1018016</td>
+<td style="text-align: center;">Seamus Mitchell</td>
+<td style="text-align: center;">Hawthorn</td>
+<td style="text-align: center;">Gen Def</td>
+<td style="text-align: center;">Sydney Swans</td>
+<td style="text-align: center;">-76</td>
+<td style="text-align: center;">PLY_PRESS_PTS</td>
+<td style="text-align: center;">9.15</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;">149741648</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">1020895</td>
+<td style="text-align: center;">Jai Newcombe</td>
+<td style="text-align: center;">Hawthorn</td>
+<td style="text-align: center;">Mid</td>
+<td style="text-align: center;">Sydney Swans</td>
+<td style="text-align: center;">-76</td>
+<td style="text-align: center;">PLY_PRESS_PTS</td>
+<td style="text-align: center;">26.55</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;">149741648</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">1023482</td>
+<td style="text-align: center;">Cam Mackenzie</td>
+<td style="text-align: center;">Hawthorn</td>
+<td style="text-align: center;">Mid</td>
+<td style="text-align: center;">Sydney Swans</td>
+<td style="text-align: center;">-76</td>
+<td style="text-align: center;">PLY_PRESS_PTS</td>
+<td style="text-align: center;">43.5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;">149741648</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">1027935</td>
+<td style="text-align: center;">Josh Weddle</td>
+<td style="text-align: center;">Hawthorn</td>
+<td style="text-align: center;">Key Def</td>
+<td style="text-align: center;">Sydney Swans</td>
+<td style="text-align: center;">-76</td>
+<td style="text-align: center;">PLY_PRESS_PTS</td>
+<td style="text-align: center;">20.55</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 2px solid grey;">10</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">2024</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">149741648</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">7</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">MCG</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">1027965</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Max Ramsden</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Hawthorn</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Key Fwd</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Sydney Swans</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">-76</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">PLY_PRESS_PTS</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">9.6</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adding-calculated-columns-by-group" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="adding-calculated-columns-by-group"><span class="header-section-number">2.3.4</span> Adding calculated columns by group</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> data2<span class="sc">|&gt;</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(variable,Position)<span class="sc">|&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># if you wanted to specific by position you could do the below</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#group_by(SEASON_ID,Position,variable)|&gt;</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">avgByVar =</span> <span class="fu">round</span>(<span class="fu">mean</span>(value),<span class="dv">2</span>))<span class="sc">|&gt;</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()<span class="sc">|&gt;</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diff =</span> <span class="fu">round</span>(value <span class="sc">-</span> avgByVar,<span class="dv">2</span>))</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlTable</span>(<span class="fu">head</span>(data2,<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="gmisc_table table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; border-bottom: 1px solid grey; border-top: 2px solid grey;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">SEASON_ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">MATCH_ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">GROUP_ROUND_NO</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">VENUE_NAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">PERSON_ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">FULLNAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">SQUAD_NAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">Position</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">OPP_SQUAD_NAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">SQUAD_MARGIN</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">value</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">WL</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">WLD</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">avgByVar</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">diff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">250395</td>
+<td style="text-align: center;">Jack Riewoldt</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">Key Fwd</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">CLEARANCE</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.47</td>
+<td style="text-align: center;">0.53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">270146</td>
+<td style="text-align: center;">Ed Curnow</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">Mid Fwd</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">CLEARANCE</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2.08</td>
+<td style="text-align: center;">-1.08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">270896</td>
+<td style="text-align: center;">Trent Cotchin</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">Mid Fwd</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">CLEARANCE</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2.08</td>
+<td style="text-align: center;">1.92</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">280819</td>
+<td style="text-align: center;">Dylan Grimes</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">Key Def</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">CLEARANCE</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">-0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">290627</td>
+<td style="text-align: center;">Dion Prestia</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">Mid</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">CLEARANCE</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4.56</td>
+<td style="text-align: center;">0.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">290847</td>
+<td style="text-align: center;">Dustin Martin</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">Gen Fwd</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">CLEARANCE</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.87</td>
+<td style="text-align: center;">0.13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">293813</td>
+<td style="text-align: center;">Tom Lynch</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">Key Fwd</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">CLEARANCE</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.47</td>
+<td style="text-align: center;">1.53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">294036</td>
+<td style="text-align: center;">George Hewett</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">Mid</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">CLEARANCE</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4.56</td>
+<td style="text-align: center;">3.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">266569840</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">MCG</td>
+<td style="text-align: center;">294592</td>
+<td style="text-align: center;">Kamdyn McIntosh</td>
+<td style="text-align: center;">Richmond</td>
+<td style="text-align: center;">Wing</td>
+<td style="text-align: center;">Carlton</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">CLEARANCE</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1.48</td>
+<td style="text-align: center;">-0.48</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 2px solid grey;">10</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">2023</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">266569840</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">1</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">MCG</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">294674</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Nick Vlastuin</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Richmond</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Gen Def</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Carlton</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">CLEARANCE</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0.75</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">-0.75</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="summarizing-data-creating-pivot-tables" class="level3" data-number="2.3.5">
+<h3 data-number="2.3.5" class="anchored" data-anchor-id="summarizing-data-creating-pivot-tables"><span class="header-section-number">2.3.5</span> Summarizing data (creating pivot tables)</h3>
+<p>Okay the next section is going to go over how we can create pivot tables using the <code>summarise</code> function from the <code>dplyr</code> package which is loaded when you load <code>tidyverse</code> . I will do a couple of different examples of data summaries you may be interested in making using the data-set at hand. I will also show examples of plots as this can be a quick way to just double check your aggregation procedures</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>data2<span class="sc">|&gt;</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(SEASON_ID<span class="sc">==</span><span class="dv">2023</span>)<span class="sc">|&gt;</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SEASON_ID,SQUAD_NAME,GROUP_ROUND_NO,variable)<span class="sc">%&gt;%</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sum =</span> <span class="fu">sum</span>(value))<span class="sc">%&gt;%</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()<span class="sc">|&gt;</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SEASON_ID,SQUAD_NAME,variable)<span class="sc">%&gt;%</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">season_avg =</span> <span class="fu">mean</span>(sum),</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">season_sd  =</span> <span class="fu">sd</span>(sum),</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">season_max =</span> <span class="fu">max</span>(sum),</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">season_sum =</span> <span class="fu">sum</span>(sum))<span class="sc">|&gt;</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>()<span class="sc">|&gt;</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">#arrange(variable, desc(season_avg))|&gt;</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Reorder SQUAD_NAME based on season_avg, within each variable facet</span></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">SQUAD_NAME_RO =</span> <span class="fu">reorder_within</span>(SQUAD_NAME, season_sum, variable))<span class="sc">|&gt;</span></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(season_sum,SQUAD_NAME_RO,<span class="at">col=</span><span class="fu">as.factor</span>(SEASON_ID)))<span class="sc">+</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>variable, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">labeller =</span> <span class="fu">label_wrap_gen</span>(<span class="at">width =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_reordered</span>() <span class="sc">+</span>  <span class="co"># Necessary to apply the custom ordering</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'SEASON_ID', 'SQUAD_NAME',
+'GROUP_ROUND_NO'. You can override using the `.groups` argument.
+`summarise()` has grouped output by 'SEASON_ID', 'SQUAD_NAME'. You can override
+using the `.groups` argument.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="module1_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>You don’t need to necessarily know what the code below is doing for now but It is just going to shorten the club names.</p>
+<p>In this next example lets have a quick look at the average stats across key variables as a function of score differential and or Win vs Loss.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>data2<span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(SEASON_ID<span class="sc">==</span><span class="dv">2023</span>)<span class="sc">|&gt;</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SQUAD_NAME,GROUP_ROUND_NO,variable,WL)<span class="sc">|&gt;</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sum =</span> <span class="fu">sum</span>(value))<span class="sc">|&gt;</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">as.factor</span>(WL),sum))<span class="sc">+</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>()<span class="sc">+</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>variable,<span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'SQUAD_NAME', 'GROUP_ROUND_NO', 'variable'.
+You can override using the `.groups` argument.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="module1_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>data2<span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(SEASON_ID<span class="sc">==</span><span class="dv">2023</span>)<span class="sc">|&gt;</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SQUAD_NAME,GROUP_ROUND_NO,variable,SQUAD_MARGIN)<span class="sc">|&gt;</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sum =</span> <span class="fu">sum</span>(value))<span class="sc">|&gt;</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(SQUAD_MARGIN,sum, <span class="at">col =</span> SQUAD_NAME))<span class="sc">+</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">col=</span><span class="st">"gray80"</span>,<span class="at">alpha=</span>.<span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>,<span class="at">se=</span>F)<span class="sc">+</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"top"</span>)<span class="sc">+</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>variable,<span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'SQUAD_NAME', 'GROUP_ROUND_NO', 'variable'.
+You can override using the `.groups` argument.
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="module1_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Lets delve a little deeper in to CONTESTED_POSSESSION</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>data2<span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(SEASON_ID<span class="sc">==</span><span class="dv">2023</span>)<span class="sc">|&gt;</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SQUAD_NAME,GROUP_ROUND_NO,variable,SQUAD_MARGIN)<span class="sc">|&gt;</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sum =</span> <span class="fu">sum</span>(value))<span class="sc">|&gt;</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(variable<span class="sc">==</span><span class="st">"CONTESTED_POSSESSION"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(SQUAD_MARGIN,sum, <span class="at">col =</span> SQUAD_NAME))<span class="sc">+</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">col=</span><span class="st">"gray80"</span>,<span class="at">alpha=</span>.<span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>,<span class="at">se=</span>F)<span class="sc">+</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>variable,<span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'SQUAD_NAME', 'GROUP_ROUND_NO', 'variable'.
+You can override using the `.groups` argument.
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="module1_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="running-your-first-model" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="running-your-first-model"><span class="header-section-number">2.4</span> Running your first model</h2>
+<p>Okay we are going to run our first statistical model. The simple linear model we will use in this case isn’t technically appropriate to use for the data set at hand but we will improve on this over the coming months. Before we can run the model we need to change the shape of the data-frame from its “long” format to a “wider” format. We can do that using the <code>spread</code> function.</p>
+<p>Personally, I prefer using <code>dcast.dafwrifwta.table</code> function for this but I am trying to be consistent within the tidyverse for you here.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>wide_TV <span class="ot">=</span> data2<span class="sc">|&gt;</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(SEASON_ID<span class="sc">==</span><span class="dv">2023</span>)<span class="sc">|&gt;</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a> <span class="co"># filter(Position%in%c("Mid","Mid Fwd"))|&gt;</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SQUAD_NAME,GROUP_ROUND_NO,variable,SQUAD_MARGIN)<span class="sc">|&gt;</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sum =</span> <span class="fu">sum</span>(value))<span class="sc">|&gt;</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(<span class="at">key =</span> <span class="fu">c</span>(<span class="st">"variable"</span>),<span class="at">value =</span> sum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'SQUAD_NAME', 'GROUP_ROUND_NO', 'variable'.
+You can override using the `.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="do">## the data.table method i prefer</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>wide_dt <span class="ot">=</span> <span class="fu">setDT</span>(data2)[SEASON_ID<span class="sc">==</span><span class="dv">2023</span>,<span class="co">#&amp;Position%in%c("Mid","Mid Fwd"),</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>         ][, .(<span class="at">sum =</span> <span class="fu">sum</span>(value)),</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>              by<span class="ot">=</span>.(SQUAD_NAME,GROUP_ROUND_NO,variable,SQUAD_MARGIN)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>          ][,<span class="fu">dcast.data.table</span>(.SD,...<span class="sc">~</span>variable,<span class="at">value.var =</span> <span class="st">"sum"</span>)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>          ]</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="co">#wide_TV|&gt;head()|&gt;htmlTable()</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>wide_dt<span class="sc">|&gt;</span><span class="fu">head</span>()<span class="sc">|&gt;</span><span class="fu">htmlTable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="gmisc_table table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; border-bottom: 1px solid grey; border-top: 2px solid grey;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">SQUAD_NAME</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">GROUP_ROUND_NO</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">SQUAD_MARGIN</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">CLEARANCE</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">CONTESTED_POSSESSION</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">EFFECTIVE_DISPOSAL</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">PLY_PRESS_PTS</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">TOTAL_GAINED_METRES</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">TURNOVER</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">Adelaide Crows</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-16</td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;">111</td>
+<td style="text-align: center;">242</td>
+<td style="text-align: center;">613.35</td>
+<td style="text-align: center;">6077.2</td>
+<td style="text-align: center;">56</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: center;">Adelaide Crows</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">-32</td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;">139</td>
+<td style="text-align: center;">253</td>
+<td style="text-align: center;">601.2</td>
+<td style="text-align: center;">5950.1</td>
+<td style="text-align: center;">62</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">Adelaide Crows</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">31</td>
+<td style="text-align: center;">39</td>
+<td style="text-align: center;">146</td>
+<td style="text-align: center;">251</td>
+<td style="text-align: center;">577.8</td>
+<td style="text-align: center;">5882.4</td>
+<td style="text-align: center;">50</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: center;">Adelaide Crows</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">39</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">151</td>
+<td style="text-align: center;">276</td>
+<td style="text-align: center;">592.8</td>
+<td style="text-align: center;">6096.5</td>
+<td style="text-align: center;">71</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: center;">Adelaide Crows</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">56</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">156</td>
+<td style="text-align: center;">302</td>
+<td style="text-align: center;">626.25</td>
+<td style="text-align: center;">6373</td>
+<td style="text-align: center;">67</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 2px solid grey;">6</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">Adelaide Crows</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">6</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">3</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">47</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">145</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">255</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">686.1</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">5902</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">66</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Lets run a multiple regression model</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(broom,equatiomatic,lme4,mgcv)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>model_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(SQUAD_MARGIN<span class="sc">~</span>CONTESTED_POSSESSION<span class="sc">+</span>EFFECTIVE_DISPOSAL<span class="sc">+</span>CLEARANCE<span class="sc">+</span>TOTAL_GAINED_METRES<span class="sc">+</span>TURNOVER,<span class="at">data =</span> wide_dt)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>model_lmer <span class="ot">&lt;-</span> <span class="fu">lmer</span>(SQUAD_MARGIN<span class="sc">~</span>CONTESTED_POSSESSION<span class="sc">+</span>EFFECTIVE_DISPOSAL<span class="sc">+</span>CLEARANCE<span class="sc">+</span>TOTAL_GAINED_METRES<span class="sc">+</span>TURNOVER<span class="sc">+</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  (CONTESTED_POSSESSION<span class="sc">+</span>CLEARANCE<span class="sc">||</span>SQUAD_NAME),<span class="at">data =</span> wide_dt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>boundary (singular) fit: see help('isSingular')</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>wide_dt<span class="sc">$</span>SQUAD_NAME <span class="ot">&lt;-</span><span class="fu">as.factor</span>(wide_dt<span class="sc">$</span>SQUAD_NAME)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>model_gam <span class="ot">&lt;-</span> mgcv<span class="sc">::</span><span class="fu">gam</span>(SQUAD_MARGIN<span class="sc">~</span><span class="fu">s</span>(CONTESTED_POSSESSION)<span class="sc">+</span><span class="fu">s</span>(EFFECTIVE_DISPOSAL)<span class="sc">+</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">s</span>(TURNOVER)<span class="sc">+</span><span class="fu">s</span>(TOTAL_GAINED_METRES)<span class="sc">+</span><span class="fu">s</span>(CLEARANCE)<span class="sc">+</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">s</span>(SQUAD_NAME,<span class="at">bs=</span><span class="st">"re"</span>),<span class="at">data =</span> wide_dt)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co">#equatiomatic::extract_eq(first_model)</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="co">#equatiomatic::extract_eq(first_model, use_coefs = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Below is a summary of the output</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">tidy</span>(model_lm,<span class="at">conf.int =</span> T,<span class="at">conf.level =</span> .<span class="dv">95</span>)<span class="sc">|&gt;</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">mutate_if</span>(is.numeric, round, <span class="dv">2</span>)<span class="sc">|&gt;</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">htmlTable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="gmisc_table table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; border-bottom: 1px solid grey; border-top: 2px solid grey;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">term</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">estimate</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">std.error</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">statistic</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">p.value</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">conf.low</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">(Intercept)</td>
+<td style="text-align: center;">-326.69</td>
+<td style="text-align: center;">19.66</td>
+<td style="text-align: center;">-16.62</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-365.33</td>
+<td style="text-align: center;">-288.06</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: center;">CONTESTED_POSSESSION</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.12</td>
+<td style="text-align: center;">3.68</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.21</td>
+<td style="text-align: center;">0.68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">EFFECTIVE_DISPOSAL</td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;">5.62</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.17</td>
+<td style="text-align: center;">0.36</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: center;">CLEARANCE</td>
+<td style="text-align: center;">0.85</td>
+<td style="text-align: center;">0.23</td>
+<td style="text-align: center;">3.62</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.39</td>
+<td style="text-align: center;">1.31</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: center;">TOTAL_GAINED_METRES</td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">14.25</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">0.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 2px solid grey;">6</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">TURNOVER</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">-1.49</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0.15</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">-10.2</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">-1.77</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">-1.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Maybe we want to visualize the above</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">tidy</span>(model_lm,<span class="at">conf.int =</span> T,<span class="at">conf.level =</span> .<span class="dv">95</span>)<span class="sc">|&gt;</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">mutate_if</span>(is.numeric, round, <span class="dv">2</span>)<span class="sc">|&gt;</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">filter</span>(term<span class="sc">%in%</span><span class="fu">c</span>(<span class="st">"TURNOVER"</span>,<span class="st">"TOTAL_GAINED_METRES"</span>,<span class="st">"CLEARANCE"</span>,</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"EFFECTIVE_DISPOSAL"</span>,<span class="st">"CONTESTED_POSSESSION"</span>))<span class="sc">|&gt;</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">ggplot</span>(<span class="fu">aes</span>(estimate,term,<span class="at">xmin=</span>conf.low,<span class="at">xmax=</span>conf.high))<span class="sc">+</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_pointrange</span>()<span class="sc">+</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>       <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="module1_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Now there are many issues with this first figure. Firstly, as they are all on different scales the figure above could potentially exaggerate the impact of turnover when compared to other variables such as metres gained. Also the p values and subsequent confidence intervals are incorrect as we have violated a couple of statistical assumptions with just using a basic linear model.</p>
+<p>Partial dependency plots offer a better way of assessing the impact of a predictor. Effectively, you can think of it as the predicted impact of changing a variable whilst holding other variables constant.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(pdp)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">partial</span>(model_gam, <span class="at">pred.var =</span> <span class="fu">c</span>(<span class="st">"TURNOVER"</span>), </span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot =</span> <span class="cn">TRUE</span>,<span class="at">plot.engine =</span> <span class="st">"ggplot"</span>,<span class="at">ice=</span>T,)<span class="sc">+</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="module1_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>What about metres gained</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">partial</span>(model_gam, <span class="at">pred.var =</span> <span class="fu">c</span>(<span class="st">"TOTAL_GAINED_METRES"</span>), </span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot =</span> <span class="cn">TRUE</span>,<span class="at">plot.engine =</span> <span class="st">"ggplot"</span>,<span class="at">ice=</span>T,)<span class="sc">+</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="module1_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">partial</span>(model_gam, <span class="at">pred.var =</span> <span class="fu">c</span>(<span class="st">"TOTAL_GAINED_METRES"</span>,<span class="st">"TURNOVER"</span>), </span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.engine =</span> <span class="st">"ggplot"</span>,</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">chull =</span> T)<span class="sc">+</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="module1_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Lets have a look at how well our model performed</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="do">## calculate predicted model values from data obtained along with some other summary #stats</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>wide_dt <span class="ot">&lt;-</span> wide_dt<span class="sc">|&gt;</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">predicted =</span> <span class="fu">predict</span>(model_lm),</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">error =</span> SQUAD_MARGIN <span class="sc">-</span> predicted,</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">absError =</span> <span class="fu">abs</span>(error),</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">squError =</span> error<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Lets have a look at how well or model can do at predicting SQUAD_MARGIN</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>(wide_dt,<span class="fu">aes</span>(SQUAD_MARGIN,predicted))<span class="sc">+</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_smooth(method = "lm",se=F)+</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>,<span class="at">slope =</span> <span class="dv">1</span>,<span class="at">col=</span><span class="st">"red"</span>,<span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="module1_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Okay, visually the performance looks pretty bad, ideally most of the dots would fit along the red line. It looks like the model is struggling to pick up the magnitude of wins and loses correctly. Lets numerically summarize this.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="do">## mean absolute error</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(wide_dt<span class="sc">$</span>absError),<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 21.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Root mean squred error</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>(wide_dt<span class="sc">$</span>squError)),<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 26.7</code></pre>
+</div>
+</div>
+<p>Okay, so we can say that using a simple multiple regression model on just mid and mid fwd data across the variables we looked at is not doing a great job at predicting SQUAD_MARGIN.</p>
+</section>
+<section id="practice-exercises" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="practice-exercises"><span class="header-section-number">2.5</span> Practice exercises</h2>
+<ol type="1">
+<li><p>Download R and Quarto <a href="https://quarto.org/docs/download/" class="uri">https://quarto.org/docs/download/</a> if you haven’t already.</p></li>
+<li><p>Load some data into R and attempt some basic data manipulation</p></li>
+<li><p>Attempt to build a basic plot</p></li>
+<li><p>Start to think about questions you might have regarding data you have access to.</p></li>
+<li><p>Look to annoy Isaac atleast once over the next two weeks with a problem you might be having.</p></li>
+</ol>
+</section>
+<section id="additional-resources" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">2.6</span> Additional resources</h2>
+<p>plotting in R using GGPLOT: <a href="https://ggplot2-book.org/" class="uri">https://ggplot2-book.org/</a></p>
+<p>Free R for data science resource: <a href="https://r4ds.had.co.nz/introduction.html" class="uri">https://r4ds.had.co.nz/introduction.html</a></p>
+<p>Free ISLR resource : <a href="https://www.statlearning.com/" class="uri">https://www.statlearning.com/</a></p>
+<p>Whilst, we wont use tidymodels too much I would encourage you to be across it <a href="https://www.tidymodels.org/start/" class="uri">https://www.tidymodels.org/start/</a> as it is a very powerful modular way for machine learning in R.</p>
+<p>youtube:</p>
+<p><a href="https://www.youtube.com/@TidyX_screencast">https://www.youtube.com/@TidyX_screencast</a></p>
+<p><a href="https://www.youtube.com/@JuliaSilge/videos">https://www.youtube.com/@JuliaSilge/videos</a></p>
+<p>and of course CHATGPT.</p>
+<p>I will continue to update this as I remember more of the resources I have come across.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./module2.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 2</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
